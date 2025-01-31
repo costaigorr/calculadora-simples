@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simples</title>
+    <script>
+        function calcular() {
+            // Passo 2.3: Solicita o primeiro número
+            let num1 = parseFloat(prompt("Digite um número"));
+
+            // Passo 2.4: Solicita o segundo número
+            let num2 = parseFloat(prompt("Digite outro número"));
+
+            // Passo 2.5: Solicita a operação (+ ou -)
+            let operacao = prompt("Digite + para somar e - para subtrair");
+
+            let resultado;
+
+            // Passo 2.6: Realiza a operação com base no que o usuário escolheu
+            if (operacao === "+") {
+                resultado = num1 + num2;
+                alert(`O resultado da soma é ${resultado}`);
+            } else if (operacao === "-") {
+                resultado = num1 - num2;
+                alert(`O resultado da subtração é ${resultado}`);
+            } else {
+                alert("Operação inválida!");
+                return; // Encerra a função caso a operação seja inválida
+            }
+
+            // Passo 3.1: Pergunta se o usuário deseja realizar outra operação
+            let continuar = prompt("Deseja realizar outra operação? Digite sim ou outro valor para fechar");
+
+            // Passo 3.2: Se o usuário digitar "sim", reinicia o cálculo
+            if (continuar.toLowerCase() === "sim") {
+                calcular(); // Chama a função novamente
+            }
+            // Passo 3.3: Qualquer outro valor fecha a interação
+        }
+
+        // Inicia a calculadora ao carregar a página
+        window.onload = calcular;
+    </script>
+</head>
+<body>
+    <h1>Calculadora Simples</h1>
+    <p>Abra o console do navegador para interagir com a calculadora.</p>
+</body>
+</html>
